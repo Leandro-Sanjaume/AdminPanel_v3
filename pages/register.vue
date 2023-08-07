@@ -42,11 +42,11 @@ const clear_inputs = () => {
 
 <template>
  <div class="flex flex-row">
-    <div class="w-1/3 flex items-center justify-center px-24 py-24">
+    <div class="w-1/3 flex items-center justify-center pl-24 pr-12 py-24">
       <NuxtLink
         to="/login"
-        class="px-4 py-2 font-medium text-4xl text-white capitalize transition-colors duration-200 transform bg-green-400 rounded-md hover:bg-green-400 focus:outline-none focus:ring focus:ring-green-800 focus:ring-opacity-80"
-      >Login page</NuxtLink>
+        class="px-4 py-2 font-medium text-4xl text-white capitalize transition-colors duration-200 transform bg-primary rounded-md focus:outline-none focus:ring focus:ring-opacity-80"
+      >Register Page</NuxtLink>
     </div>
    
     <div class="w-1/3 px-12 py-12 my-24 mx-24">
@@ -68,7 +68,7 @@ const clear_inputs = () => {
           />
         </div>
         <div class="flex justify-end">
-          <input type="submit" value="Register">
+          <input type="submit" class="btn btn-accent" value="Register">
         </div>
       </form>
     </div>

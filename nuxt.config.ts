@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: [
-    "@pinia/nuxt"
+    "@pinia/nuxt",
+    "@nuxtjs/tailwindcss"
   ]
 })

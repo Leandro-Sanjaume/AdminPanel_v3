@@ -1,46 +1,34 @@
 <script lang="ts" setup>
 import { AuthError, AuthErrorType } from '../models/AuthErrors';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { use_user_store } from '../stores/use_user_store';
 
 const email_login = ref('');
 const password_login = ref('');
 
 const user_store = use_user_store();
-const logged_in = ref( false );
 const error: Ref<AuthError> = ref({ type: AuthErrorType.NoError, msg: '' });
 
-  const login_user = async () => {
-    if ( email_login.value.trim() == "" || password_login.value.trim() == "" ) {
-        error.value = { type: AuthErrorType.IncompleteFields, msg: 'Please complete all fields' };
-        return;
-    }
+const login_user = async () => {
+  if ( email_login.value.trim() == "" || password_login.value.trim() == "" ) {
+      error.value = { type: AuthErrorType.IncompleteFields, msg: 'Please complete all fields' };
+      return;
+  }
 
-    const login_result = await signInWithEmailAndPassword( getAuth(), email_login.value, password_login.value )
-    .catch( ( reason: any ) => {
-        if ( reason instanceof Error ) {
-            error.value = { type: AuthErrorType.FirebaseAuthError, msg: reason.message };
-            return;
-        }
-    } );
+  const login_result = await signInWithEmailAndPassword( getAuth(), email_login.value, password_login.value )
+  .catch( ( reason: any ) => {
+      if ( reason instanceof Error ) {
+          error.value = { type: AuthErrorType.FirebaseAuthError, msg: reason.message };
+          return;
+      }
+  } );
 
-    user_store.user = login_result!.user;
-    logged_in.value = true;
-    await navigateTo({ path: '/home' })
-
-    clear_inputs();
-};
-
-const clear_inputs = () => {
-    email_login.value = '';
-    password_login.value = '';
+  user_store.user = login_result!.user;
+  await navigateTo('/home')
 };
 
 if ( user_store.user != null ) {
-    logged_in.value = true;
-    if(logged_in.value){
-      await navigateTo({ path: '/home' })
-    }
+  await navigateTo({ path: '/home' })
 }
 
 </script>
@@ -50,8 +38,8 @@ if ( user_store.user != null ) {
     <div class="w-1/3 flex items-center justify-center px-24 py-24">
       <NuxtLink
         to="/register"
-        class="px-4 py-2 font-medium text-4xl text-white capitalize transition-colors duration-200 transform bg-green-400 rounded-md hover:bg-green-400 focus:outline-none focus:ring focus:ring-green-800 focus:ring-opacity-80"
-      >Register page</NuxtLink>
+        class="px-4 py-2 font-medium text-4xl text-white capitalize transition-colors duration-200 transform bg-primary rounded-md focus:outline-none focus:ring focus:ring-opacity-80"
+      >Login Page</NuxtLink>
     </div>
    
     <div class="w-1/3 px-12 py-12 my-24 mx-24">
@@ -72,7 +60,7 @@ class="w-full border border-gray-400 text-gray-800 placeholder-gray-400 rounded 
           />
         </div>
         <div class="flex justify-end">
-          <input type="submit" value="Register">
+          <input class="btn btn-accent" type="submit" value="Login">
         </div>
       </form>
     </div>

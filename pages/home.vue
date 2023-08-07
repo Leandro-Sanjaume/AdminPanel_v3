@@ -13,16 +13,20 @@ const logout_user = () => {
     logged_in.value = false;
     navigateTo({ path: '/login' })
 };
+
+if ( user_store.user == null ) {
+  navigateTo('/login');
+}
 </script>
 
 <template>
   <div>
-    <div class="logged-user" v-if="logged_in">
+    <div class="space-x-2" v-if="logged_in">
         <span>Currently logged in as {{ user_store.user!.email }}</span>
-        <input type="button" value="Logout" @click="logout_user">
+        <input class="btn btn-primary btn-sm" type="button" value="Logout" @click="logout_user">
     </div>
     <div>
-        <h1>Datos de Serie Comercial en Millones de Dolares</h1>
+        <h1 class="pt-2 text-3xl">Datos de Serie Comercial en Millones de Dolares</h1>
 
         <hr>
     </div>

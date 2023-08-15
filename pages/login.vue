@@ -34,16 +34,10 @@ if ( user_store.user != null ) {
 </script>
 
 <template>
- <div class="flex flex-row">
-    <div class="w-1/3 flex items-center justify-center px-24 py-24">
-      <NuxtLink
-        to="/register"
-        class="px-4 py-2 font-medium text-4xl text-white capitalize transition-colors duration-200 transform bg-primary rounded-md focus:outline-none focus:ring focus:ring-opacity-80"
-      >Login Page</NuxtLink>
-    </div>
-   
-    <div class="w-1/3 px-12 py-12 my-24 mx-24">
-      <form  @submit.prevent @submit="login_user" class="space-y-3">
+  
+    <div class="join join-vertical sm:join-horizontal px-5 my-6 sm:px-12 sm:py-12 sm:my-24">
+      <img class="join-item mx-auto w-48 md:w-56" src="../public/logo.png" alt="Instituto Politecnico Modelo">
+      <form  @submit.prevent @submit="login_user" class="float-right space-y-3 w-80 mr-12 join-item">
         <div>
           <h1 class="font-bold text-lg md:text-xl xl:text-2xl tracking-tight">Login</h1>
         </div>
@@ -64,7 +58,6 @@ class="w-full border border-gray-400 text-gray-800 placeholder-gray-400 rounded 
         </div>
       </form>
     </div>
-  </div>
 
   <div class="error-container" v-if="error.type != AuthErrorType.NoError">
         <b style="color: red">Error: {{ error.msg }}</b>

@@ -1,4 +1,12 @@
 module.exports = {
+  /*theme: {
+    extend: {
+      screens: {
+        '640': '640px',
+        '750': '750px',
+      },
+    },
+  },*/
   daisyui: {
     themes: [
       {
@@ -12,9 +20,9 @@ module.exports = {
           success: "#2bd4bd",
           warning: "#f4c152",
           error: "#fb6f84",
-        },
-      },
-    ],
+        }
+      }
+    ]
   },
   plugins: [require("daisyui")],
 };

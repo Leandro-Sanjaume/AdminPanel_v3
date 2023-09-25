@@ -16,23 +16,22 @@ const user_store = use_user_store();
   <!--div>
     <div class="text-white text-3xl text-center p-4">Dashboard</div>
   </div-->
-  <div class="text-white text-center mt-5" v-if="user_store.logged_in">
-    <span class="text-3xl">Welcome {{ user_store.user!.email }} to IPM's Face Recognition Control
+  <div class="text-white text-center mt-5 mx-5" v-if="user_store.logged_in">
+    <span class="text-3xl ">Welcome {{ user_store.user!.email }} to IPM's Face Recognition Control
       Panel</span>
   </div>
 
-  <div class="w-100 flex justify-center mt-5">
+  <!--div class="w-100 flex justify-center mt-5">
     <label class="swap swap-flip text-9xl">
-      <!-- this hidden checkbox controls the state -->
       <input type="checkbox" />
 
       <div class="swap-on">😈</div>
       <div class="swap-off">😇</div>
     </label>
-  </div>
+  </div-->
 
-  <div class="w-100 flex justify-center mt-10">
-    <div class="stats flex mystats shadow bg-neutral">
+  <div class="w-100 flex justify-center mt-6">
+    <div class="stats stats-vertical md:stats-horizontal shadow bg-neutral" >
       <div class="stat">
         <div class="stat-figure text-secondary">
           <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="36px" viewBox="0 0 20 20"
@@ -55,7 +54,6 @@ const user_store = use_user_store();
         <div class="stat-desc">Unrecognized users</div>
       </div>
 
-      <div class="divider w-100 h-[2px] bg-black"> </div>
 
       <div class="stat">
         <div class="stat-figure text-secondary">
@@ -92,31 +90,123 @@ const user_store = use_user_store();
     </div>
   </div>
 
-  <div class="w-100 flex justify-center mt-8">
-    <div class="card w-[650px]  bg-base-100 shadow-xl bg-neutral">
-      <div class="card-body !p-6 items-center text-center">
-        <h2 class="card-title">My feed</h2>
-        <p>Check out the latest system activity!</p>
-        <div class="overflow-x-auto">
-
-          <table class="table mt-2">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Event</th>
-              </tr>
-            </thead>
+  <div class="w-100 flex flex-col items-center justify-center mt-8 md:!mx-8 sm:!mx-6 !mx-4">
+    <h2 class="card-title">Latest activity</h2>
+    <div class="card w-full md:w-[650px] mx-10 bg-base-100 shadow-xl bg-neutral mt-2">
+      <div class="card-body !gap-0 !py-1 !px-0 items-center text-center">
+        <table class="table !m-0 !p-0">
+          <thead>
+            <tr class="!border-t-1 !border-[#2f3949]">
+              <th class="w-[146px]">Date</th>
+              <th>Event</th>
+            </tr>
+          </thead>
+        </table>
+          
+        <div class="overflow-x-auto !max-h-[400px] overflow-y-scroll w-full">  
+          <table class="table">
             <tbody>
               <tr>
-                <td>18/09/2023 16:00</td>
-                <td>A new user registered!</td>
+                <td>18/09/2023 11:32</td>
+                <td>Thiago leto entered the main entrance with 4 prostitutes.</td>
               </tr>
               <tr>
-                <td>18/09/2023 17:00</td>
-                <td>50 users were detect in the last hour!</td>
+                <td>19/09/2023 02:34</td>
+                <td>Enrique Toriggia entered the main entrance with 10 fards of cocaine.</td>
               </tr>
               <tr>
-                <td>18/09/2023 18:00</td>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19/09/2023 06:30</td>
+                <td>Enrique and Leto left with 2 of the prostitutes in a ferrari.</td>
                 <td></td>
               </tr>
             </tbody>
@@ -132,5 +222,9 @@ const user_store = use_user_store();
   .mystats {
     flex-direction: column !important;
   }
+}
+
+table tr{
+  border-bottom-color: #2f3949 !important;
 }
 </style>

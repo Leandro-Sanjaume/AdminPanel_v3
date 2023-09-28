@@ -24,7 +24,7 @@ const logout_user = () => {
                 <div class="dropdown dropdown-end mr-4">
                     <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                         <div class="w-10 rounded-full">
-                            <img src="leto.jpg" />
+                            <img src="https://avatars.githubusercontent.com/u/82118333?v=4" />
                         </div>
                     </label>
                     <ul tabindex="0"
@@ -40,7 +40,13 @@ const logout_user = () => {
         </div>
     </header>
     <slot> </slot>
-    <footer></footer>
+    <footer class="mt-10">
+        <div class="w-100 h-[50px] flex justify-center items-center text-center bg-secondary">
+            <div class="text-center">
+                Copyright © 2023 - Polifaces
+            </div>
+        </div>
+    </footer>
 </template>
 
 <style>

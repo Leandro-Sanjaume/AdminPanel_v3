@@ -1,5 +1,11 @@
+<script setup>
+const studentData = {
+    id: "112a43a453634bc11"
+}
+</script>
+
 <template>
-    <tr @click="navigateTo('/profile')" style="cursor: pointer;">
+    <tr @click="navigateTo(`/student/${studentData.id}`)" style="cursor: pointer;">
         <td>
             <div class="flex items-center space-x-3">
                 <div class="avatar">
